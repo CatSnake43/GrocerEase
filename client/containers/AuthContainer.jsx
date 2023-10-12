@@ -1,10 +1,10 @@
 import React from 'react';
-import NavBar from '../components/navBar.js'; // Import the Navbar component
 import Login from '../components/Login.jsx';
 import Profile from '../components/Profile.jsx';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as actions from '../actions/loginActions.js';
+
 // add state and dispatch functions to props be used in Login component
 const mapStateToProps = ({ login: { newUser, authStep } }) => ({
   newUser,
@@ -18,21 +18,14 @@ const AuthContainer = (props) => {
   if (props.authStep === 1) {
     console.log(props);
     return (
-      <div>
-        <NavBar />
-        <div className='auth-container'>
-          <Login {...props} />
-        </div>
+      <div className='main-container'>
+        <Login {...props} />
       </div>
-      
     );
   } else if (props.authStep === 2) {
     return (
-      <div>
-        <NavBar />
-        <div className='auth-container'>
-          <Profile {...props} />
-        </div>
+      <div className='main-container'>
+        <Profile {...props} />
       </div>
     );
   }

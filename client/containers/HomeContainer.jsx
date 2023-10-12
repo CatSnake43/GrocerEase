@@ -3,15 +3,12 @@ import Form from '../components/Form.jsx';
 // import Results from '../components/Results.jsx';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as actions from '../actions/homepageActions.js';
-import NavBar from '../components/navBar.js';
-import Result from '../components/Results.jsx'
+import * as actions from '../actions/loginActions.js';
 
 // add state and dispatch functions to props be used in Login component
-const mapStateToProps = ({ recipe: { currIngr, ingr, recipeList } }) => ({
+const mapStateToProps = ({ recipe: { currIngr, ingr } }) => ({
   currIngr,
-  ingr,
-  recipeList
+  ingr
 });
 
 const mapDispatchToProps = (dispatch) => bindActionCreators(actions, dispatch);
@@ -19,13 +16,12 @@ const mapDispatchToProps = (dispatch) => bindActionCreators(actions, dispatch);
 // React component
 const HomeContainer = (props) => {
   return (
-    <div id='home-page'>
-      <NavBar />
-      <h1>Recipes Search</h1>
+    <div>
+      <h1>Search for recipes</h1>
       <br></br>
-      <Form {...props} />
+      <Form {...props}/>
       <br></br>
-      <Result {...props.recipeList} /> 
+      {/* <Results /> */}
     </div>
   );
 };
