@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Result = ({
-  recipeName,
+    recipeName,
   ingredients,
   recipeImageRef,
   servingSize,
@@ -22,17 +22,17 @@ const Result = ({
         <img src={recipeImageRef} />
         <h3>Ingredients:</h3>
         <ul>
-          {ingredients.map((ingredient, index) => (
-            <li key={index}> {ingredient} </li>
-          ))}
+          {ingredients.map((ingredient, index) => ( 
+              <li key={index}> {ingredient} </li> 
+            ))}
         </ul>
         <p>Serving Size: {servingSize} </p>
         <a href={instructions}> Instructions Link </a>
-        
+
       </div>
     );
   }
-
+    
   // const listItems = ingredients.map((ingredient) => <li>{ingredient}</li>);
 };
 export default Result;
