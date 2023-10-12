@@ -4,6 +4,13 @@ require('dotenv').config();
 apiController.getData = async (req, res, next) => {
   // data being passed to the backend
   const { ingr, cuisineType, mealType, dishType } = req.query;
+
+  //for testing purposes, query convert arrays to a string
+  const ingred = Array.isArray(ingr) ? ingr : [ingr];
+  const cuisine = Array.isArray(cuisineType) ? cuisineType : [cuisineType];
+  const meal = Array.isArray(mealType) ? mealType : [mealType];
+  const dish = Array.isArray(dishType) ? dishType : [dishType];
+
   const cookie = req.cookie;
 
   // api authentications to include in the query string
@@ -16,7 +23,7 @@ apiController.getData = async (req, res, next) => {
 
   // joins the ingredients
   let queries = '';
-  const ingredients = `&q=${ingr.join('%2C%20')}`;
+  const ingredients = `&q=${ingred.join('%2C%20')}`;
 
   // adds restrictions
   // try {
@@ -28,16 +35,16 @@ apiController.getData = async (req, res, next) => {
   // adds cuisine type to the query
   if (cuisineType !== undefined) {
     //check if cuisine type is passed in
-    queries += `&cuisineType=${cuisineType[0]}`;
+    queries += `&cuisineType=${cuisine[0]}`;
   }
   // adds meal type to the query
   if (mealType !== undefined) {
     //check if meal dish type is passed in
-    queries += `&mealType=${mealType[0]}`;
+    queries += `&mealType=${meal[0]}`;
   }
   if (dishType !== undefined) {
     //check if dish type is passed in
-    queries += `&dishType=${dishType[0].split(' ').join('%20')}`; // adds dish type to the query
+    queries += `&dishType=${dish[0].split(' ').join('%20')}`; // adds dish type to the query
   }
   // } catch (error) {
   //   return res.redirect(200, '/auth');

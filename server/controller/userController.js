@@ -7,7 +7,7 @@ const userController = {
     try {
       // pull out username and password from body and check to make sure username and password are strings
       const { username, password, restrictions } = req.body;
-
+      const restrict = Array.isArray(restrictions) ? restrictions: [restrictions];
       // if username/password is not a string or is not provided, return error
       if (!username || !password) {
         return next({
@@ -26,7 +26,7 @@ const userController = {
       const newUser = await User.create({
         username,
         password: hashedPassword,
-        restrictions,
+        restrictions: restrict,
       });
       res.locals.user = newUser;
       console.log(newUser);

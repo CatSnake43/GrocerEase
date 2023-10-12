@@ -53,7 +53,7 @@ app.post(
 // cookieController.setCookie,
 // serves index.html to frontend
 app.get('/', (req, res) => {
-  res.sendFile(path.resolve(__dirname, '../client/index.html'));
+  return res.sendFile(path.resolve(__dirname, '../client/index.html'));
 });
 
 //api fetch request => send to api controller and fetching data
