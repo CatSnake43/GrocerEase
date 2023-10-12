@@ -10,26 +10,11 @@ export const apiSubmit = () => (dispatch, getState) => {
   apiReq.mealType = getState().recipe.mealType;
   apiReq.dishType = getState().recipe.dishType;
   axios
-    .get('/api', {
-      params: {
-        ingr: apiReq.ingr,
-        cuisineType: apiReq.cuisineType,
-        mealType: apiReq.mealType,
-        dishType: apiReq.dishType,
-      },
-    })
+    .post('/api', apiReq)
     .then(({ status, data }) => {
-      if (status === 200) {
-        //code for dispatch
-        dispatch({ type: types.DISPLAY_RECIPES, payload: data });
-      } else if (status === 204) {
-        //check if recipe not found
-        window.alert('No Recipe Found, try again.');
-      }
+      if (status === 202) dispatch({ type: types.DISPLAY_RECIPES, payload: data });
     })
-    .catch((error) => {
-      console.log('Error occurred: ', error);
-    });
+    .catch(console.error);
 };
 
 export const updateIngr = (data) => ({
