@@ -5,6 +5,7 @@ Meal prepping app that picks recipes for you, makes a grocery list, and helps yo
 Excalidraw: https://excalidraw.com/#room=dd3e59dc64626b5fe0c4,uFSQUn1gRVI2ioMQMLm_XQ
 
 Features:
+
 User sign-up
 
 User login
