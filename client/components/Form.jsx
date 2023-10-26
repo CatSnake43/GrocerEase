@@ -13,11 +13,13 @@ const Form = ({
   removeIngr,
   currIngr,
 }) => {
-
   return (
     <div id='form-container'>
-      <form onSubmit={(e) => {e.preventDefault(),
-        apiSubmit()}}>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault(), apiSubmit();
+        }}
+      >
         <div id='ingredient-input-container'>
           <label htmlFor='ingredient'>Include this ingredient:</label>
           <input
@@ -39,10 +41,8 @@ const Form = ({
             <Ingredient value={el} id={'ingredient' + idx} />;
           })}
         </div>
-        
-       
-     
-        <div className="select-container">
+
+        <div className='select-container'>
           <label htmlFor='cuisine'>Cuisine:</label>
           <select
             id='cuisine'
@@ -67,9 +67,13 @@ const Form = ({
           </select>
         </div>
 
-        <div className="select-container">
+        <div className='select-container'>
           <label htmlFor='mealType'>Meal type:</label>
-          <select id='mealType' name='mealType' onChange={(e) => updateMeal(e.target.value)}>
+          <select
+            id='mealType'
+            name='mealType'
+            onChange={(e) => updateMeal(e.target.value)}
+          >
             <option value=''>--Choose an option--</option>
             <option value='Breakfast'>Breakfast</option>
             <option value='Lunch'>Lunch</option>
@@ -77,10 +81,14 @@ const Form = ({
             <option value='Snack'>Snack</option>
           </select>
         </div>
-        
-        <div className="select-container">
+
+        <div className='select-container'>
           <label htmlFor='dishType'>Dish type:</label>
-          <select id='dishType' name='dishType' onChange={(e) => updateDish(e.target.value)}>
+          <select
+            id='dishType'
+            name='dishType'
+            onChange={(e) => updateDish(e.target.value)}
+          >
             <option value=''>--Choose an option--</option>
             <option value='Main Course'>Main</option>
             <option value='Starter'>Starter</option>
@@ -90,12 +98,9 @@ const Form = ({
             <option value='Soup'>Soup</option>
           </select>
 
-          <button type='submit' >
-            Search
-          </button>
+          <button type='submit'>Search</button>
         </div>
         <br></br>
-        
       </form>
     </div>
   );

@@ -16,6 +16,7 @@ export const apiSubmit = () => (dispatch, getState) => {
         cuisineType: apiReq.cuisineType,
         mealType: apiReq.mealType,
         dishType: apiReq.dishType,
+        user: apiReq.user
       },
     })
     .then(({ status, data }) => {

@@ -3,8 +3,9 @@ const User = require('../models/usersModel');
 require('dotenv').config();
 apiController.getData = async (req, res, next) => {
   // data being passed to the backend
-  const { ingr, cuisineType, mealType, dishType } = req.query;
-  const cookie = req.cookie;
+  const { ingr, cuisineType, mealType, dishType, user } = req.query;
+  // const cookie = user;
+  console.log(user);
 
   // api authentications to include in the query string
   const appID = process.env.appID;
