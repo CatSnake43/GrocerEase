@@ -30,23 +30,23 @@ app.use(cookieParser());
 app.post(
   '/signup',
   userController.createUser,
-  sessionController.startSession,
-  cookieController.setSSIDCookie,
+  // sessionController.startSession,
+  // cookieController.setSSIDCookie,
   (req, res) => {
     console.log('successful signup. redirecting to homepage');
     // redirects to homepage when they sucessfully create an account
-    return res.sendStatus(200);
+    return res.sendStatus(201);
   }
 );
 
 app.post(
   '/login',
   userController.verifyUser,
-  sessionController.startSession,
-  cookieController.setSSIDCookie,
+  // sessionController.startSession,
+  // cookieController.setSSIDCookie,
   (req, res) => {
     console.log('login successful. redirecting to homepage');
-    return res.sendStatus(200);
+    return res.sendStatus(202);
   }
 );
 
@@ -57,11 +57,11 @@ app.get('/', (req, res) => {
 });
 
 //api fetch request => send to api controller and fetching data
-app.get('/api', apiController.getData , (req, res) => {
-  if(res.locals.status === 200) return res.status(200).json(res.locals); //if recipe is found
-  else if(res.locals.status === 204) res.sendStatus(204); // not found recipe
+app.get('/api', apiController.getData, (req, res) => {
+  if (res.locals.status === 200)
+    return res.status(200).json(res.locals); //if recipe is found
+  else if (res.locals.status === 204) res.sendStatus(204); // not found recipe
 });
-
 
 // app.use('*', (req,res) => {
 //   res.status(404).send('Not Found');

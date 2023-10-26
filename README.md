@@ -7,11 +7,14 @@ Features:
 User sign-up
 User login
 Complete user signup page with allergens/preferences selection
-Search recipe page
+Fully functional Search recipe page with query building logic base on third party API.
+Search Engine are full working with different option for user to choose.
 
 ## Front End
 
-React/Redux was used on the front-end to have a single store of truth (state). React router was used to route between user authentication page and main page.
+React/Redux was used on the front-end. Fully functional state management using redux.
+React router was used to route between user authentication page and main page.
+Navigation bar for navigating between pages.
 
 ## Login/Auth Backend
 
@@ -27,11 +30,8 @@ If user was found, start a session, and reroute to the homepage.
 ## Blocks
 
 Rerouting of the login page was not being sent to the homepage.
-
-The React components on the homepage were not fully fleshed out. Specifically, the React component to display the recipe that was received was not written yet.
+Bugs on session and cookie.
 
 ## Stretch Features
 
-Tinder for recipes, where the user is able to like or dislike through a list of recipes that will save the recipe to a database when liked where it can then be accessed by the user
-
-Creating a single grocery list based on the ingredients of all liked recipes or selected recipes so the user could print a list and take it to the grocery store. 
+Creating a single grocery list based on the ingredients of all liked recipes or selected recipes so the user could print a list and take it to the grocery store.
