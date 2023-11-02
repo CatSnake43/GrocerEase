@@ -4,20 +4,18 @@
 
 ## Features
 
-### User Sign-Up
+#### User Sign-Up
 - Easily create a user profile to personalize your experience.
 
-### User Login
+#### User Login
 - Secure authentication to access your profile and saved preferences.
 
-### User Signup Page
+#### User Signup Page
 - Customize your dietary preferences and allergens to receive recipe recommendations tailored to your needs.
 
-### Recipe Search
+#### Recipe Search
 - A fully functional recipe search page powered by third-party APIs with advanced query-building options.
-
-### Search Engines
-- Choose from various search engines to find the perfect recipes.
+- Choose from our logic search engines to find the perfect recipes.
 
 ## Front End
 
