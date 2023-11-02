@@ -1,47 +1,54 @@
 # GrocerEase
 
-Meal prepping app that picks recipes for you, makes a grocery list, and helps you save favorite meals - based on your dedicated user profile.
+**GrocerEase** is a meal prepping app designed to simplify your meal planning and grocery shopping experience. It helps you save time, eat better, and discover new recipes that match your dietary preferences. With GrocerEase, you can create a dedicated user profile, search for recipes, generate grocery lists, and save your favorite meals.
 
-Excalidraw: https://excalidraw.com/#room=dd3e59dc64626b5fe0c4,uFSQUn1gRVI2ioMQMLm_XQ
+## Features
 
-Features:
+### User Sign-Up
+- Easily create a user profile to personalize your experience.
 
-User sign-up
+### User Login
+- Secure authentication to access your profile and saved preferences.
 
-User login
+### User Signup Page
+- Customize your dietary preferences and allergens to receive recipe recommendations tailored to your needs.
 
-Complete user signup page with allergens/preferences selection
+### Recipe Search
+- A fully functional recipe search page powered by third-party APIs with advanced query-building options.
 
-Fully functional Search recipe page with query building logic base on third party API.
-
-Search Engine are full working with different option for user to choose.
+### Search Engines
+- Choose from various search engines to find the perfect recipes.
 
 ## Front End
 
-React/Redux was used on the front-end. Fully functional state management using redux.
-
-React router was used to route between user authentication page and main page.
-
-Navigation bar for navigating between pages.
+- Developed using **React** and **Redux** for efficient state management.
+- Utilizes **React Router** for seamless navigation between authentication and main pages.
+- Includes a user-friendly navigation bar for easy page switching.
 
 ## Login/Auth Backend
 
-When users attempted to sign up, they would first be routed to the createUser middleware inside the userController. It hashes the password and then stores the username, password and the dietary restrictions in our user database (MongoDB)
+- User registration and authentication are handled through a series of middleware in the backend.
+- Passwords are securely hashed and stored in a **MongoDB** database.
+- Session management ensures user persistence across multiple sessions.
 
-Next middleware starts a session based on the user id.
+## Known Issues (Blocks)
 
-Last middleware checks to make sure the session has not expired yet and sets the user id as an ssid cookie in the browser..
-
-Verify user middleware checks for the user in the database. If not found, reroutes user to sign up page.
-
-If user was found, start a session, and reroute to the homepage.
-
-## Blocks
-
-Rerouting of the login page was not being sent to the homepage.
-
-Bugs on session and cookie.
+- There is an issue with the redirection from the login page to the homepage that needs to be resolved.
 
 ## Stretch Features
 
-Creating a single grocery list based on the ingredients of all liked recipes or selected recipes so the user could print a list and take it to the grocery store.
+In the future, we plan to introduce the following enhancements:
+
+- Create a single, consolidated grocery list based on the ingredients from all your liked or selected recipes, making it easy to print and take to the grocery store.
+
+## Technologies Used
+
+**Front End:**
+- **React**
+- **React Router**
+- **Redux**
+
+**Back End:**
+- **Node.js**
+- **Express**
+- **MongoDB**
