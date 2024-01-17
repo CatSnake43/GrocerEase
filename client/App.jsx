@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import AuthContainer from './containers/AuthContainer.jsx';
 import HomeContainer from './containers/HomeContainer.jsx';
