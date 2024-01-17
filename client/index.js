@@ -12,6 +12,10 @@ root.render(
   <BrowserRouter>
     <Provider store={store}>
       <App />
+      <div className='footer'>
+        <p>Version.1.5</p>
+        <p>Iterated by Spencer, Hadrian, Jeremy, Nam</p>
+      </div>
     </Provider>
   </BrowserRouter>
 );
