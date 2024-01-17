@@ -7,19 +7,22 @@ const userController = require('./controller/userController');
 const cookieController = require('./controller/cookieController');
 const sessionController = require('./controller/sessionController');
 const apiController = require('./controller/apiController');
-require('dotenv').config();
+const { env } = require('process');
 
 const app = express();
 const PORT = 3000;
 
-const MONGO_URI = process.env.MONGO_URI;
+const MONGO_URI = env.MONGO_URI;
 
 mongoose
-  .connect(MONGO_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    dbName: 'GrocerEase',
-  })
+  .connect(
+    env.MONGO_URI,
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      dbName: 'GrocerEase',
+    }
+  )
   .then(() => console.log('Connected to Mongo DB'))
   .catch((err) => console.log(err));
 

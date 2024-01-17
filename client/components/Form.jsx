@@ -11,7 +11,7 @@ const Form = ({
   updateDish,
   ingr,
   removeIngr,
-  currIngr,
+  currIngr
 }) => {
   return (
     <div id='form-container'>
